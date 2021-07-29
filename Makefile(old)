@@ -1,13 +1,11 @@
 NAME = so_long
 
-HEADER = so_long.h 
-#		./mlx/mlx.h
+HEADER = so_long.h
 
 SRCS	= main.c \
 		parsing_stepa.c \
 		check_valid.c \
-		comp_str_add.c 
-		#./mlx/*.c
+		comp_str_add.c
 		
 LIBA = ./libft_42_school/libft.a
 
@@ -24,19 +22,13 @@ STRJOIN = ./libft_42_school/ft_strjoin.c \
 		./libft_42_school/ft_strdup.c \
 		./libft_42_school/ft_split.c
 
-# %.o: %.c
-# ${CC} ${CFLAGS} -Imlx -c $< -o $@ 
-
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 	
 all: ${NAME}
 	
-${NAME}: ${OBJS} ${HEADER}
-		 ${CC} -g -o ${NAME} ${OBJS} ${LIBA}
-
-# ${NAME}: ${OBJS}
-#		${CC} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+${NAME}:	${OBJS} ${HEADER}
+			${CC} -g -o ${NAME} ${OBJS} ${LIBA}
 
 clean:
 		${RM} ${OBJS}

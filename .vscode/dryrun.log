@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/chudapak/code/diana/so_long'
+gcc -Wall -Wextra -Werror -c main.c -o main.o
+ 
+gcc -Wall -Wextra -Werror -c parsing_stepa.c -o parsing_stepa.o
+gcc -Wall -Wextra -Werror -c check_valid.c -o check_valid.o
+gcc -Wall -Wextra -Werror -c comp_str_add.c -o comp_str_add.o
+gcc -g -o so_long main.o parsing_stepa.o check_valid.o comp_str_add.o ./libft_42_school/libft.a
+make: Leaving directory `/Users/chudapak/code/diana/so_long'
+ 

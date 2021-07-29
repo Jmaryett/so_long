@@ -3,6 +3,7 @@
 # define SO_LONG_H
 
 #include "./libft_42_school/libft.h"
+#include "./mlx/mlx.h"
 
 # ifndef BUFFER_SIZE
 #	define BUFFER_SIZE 32
@@ -20,6 +21,7 @@ int	check_lines(char *array);
 char	*comp_str(char *array);
 int	check_height_width(char *array);
 int	check_valid(char *array);
+void	init_height_width(char *array);
 
 
 #endif

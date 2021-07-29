@@ -1,5 +1,13 @@
 #include "so_long.h"
 
+static void	init_height_width(int len, int count)
+{
+	t_map	m;
+
+	m.height = count;
+	m.lenght = len;
+}
+
 int	check_height_width(char *array)
 {
 	int	i;
@@ -21,15 +29,15 @@ int	check_height_width(char *array)
 	count++;
 	if (count == len || count == 0 || len == 0)
 		return (0);
-	//printf ("%d\n%d\n", count, len);
+	printf ("%d\n%d\n", count, len);
 	return (1);
 }
 
 int	check_lines(char *array)
 {
-	int	i;
-	int	len;
-	int len2;
+	int		i;
+	int		len;
+	int 	len2;
 	char	*comp;
 	
 	i = 0;
@@ -37,14 +45,10 @@ int	check_lines(char *array)
 	while (array[i] != '\n')
 		i++;
 	len = i;
-	//i++;
 	while (array[i])
 	{
 		if (array[i] == '\n')
 		{
-			//len2 = i - len - 1;
-			//comp = ft_memmove(comp, array + i, len2);
-			//comp = ft_strtrim(&array[i + 1], "\n");
 			comp = comp_str(array + i + 1);
 			if (ft_strlen(comp) != len)
 				return (0);
@@ -55,7 +59,6 @@ int	check_lines(char *array)
 	//printf ("%d\n", len);
 	return (1);
 }
-
 
 char	*filling_array(int fd)
 {
