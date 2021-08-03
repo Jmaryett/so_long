@@ -1,7 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/chudapak/code/diana/so_long'
- 
-make: *** No rule to make target `my_key_hooks.o', needed by `so_long'.
+make: Nothing to be done for `all'.
  
 make: Leaving directory `/Users/chudapak/code/diana/so_long'
  

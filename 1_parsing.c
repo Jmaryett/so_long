@@ -1,5 +1,13 @@
 #include "so_long.h"
 
+static void	check_map_size(t_map *map)
+{
+	if (map->width < 100)
+		map->width *= 100;
+	if (map->height < 100)
+		map->height *= 100;
+}
+
 int	check_height_width(char *array, t_map *map)
 {
 	int	i;
@@ -19,10 +27,11 @@ int	check_height_width(char *array, t_map *map)
 		i++;	
 	}
 	count++;
-	if (count == len || count == 0 || len == 0)
+	if (/* count == len || */ count == 0 || len == 0)
 		return (0);
 	map->height = count;
 	map->width = len;
+	check_map_size(map);
 	//printf ("%d\n%d\n", count, len);
 	return (1);
 }

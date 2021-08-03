@@ -7,13 +7,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `my_key_hooks.o', needed by `so_long'.  Stop.
- 
 
-# Make data base, printed on Mon Aug  2 17:22:33 2021
+# Make data base, printed on Tue Aug  3 17:50:19 2021
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -30,16 +29,15 @@ VSCODE_LOG_NATIVE = false
 CURDIR := /Users/chudapak/code/diana/so_long
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 25)
- 
+# makefile (from `Makefile', line 26)
 RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from `Makefile', line 21)
+# makefile (from `Makefile', line 22)
 MLX = libmlx.dylib
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 31)
+# makefile (from `Makefile', line 32)
 CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
@@ -47,7 +45,7 @@ MAKEFILE_LIST :=  Makefile
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
-# makefile (from `Makefile', line 33)
+# makefile (from `Makefile', line 34)
 STRJOIN = ./libft_42_school/ft_strjoin.c ./libft_42_school/ft_strlen.c ./libft_42_school/ft_strdup.c ./libft_42_school/ft_split.c
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/8q/rhdj3xf96_97nfbhqs4jm3xh0000gn/T/vscode-ipc-cfb686d1-4f03-4baa-a8fe-58a68fd17f7d.sock
@@ -59,7 +57,7 @@ PATH = /Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 3)
 LIBFT_C = ./libft_42_school/*.c
-# makefile (from `Makefile', line 27)
+# makefile (from `Makefile', line 28)
 AR = ar rc
 # environment
 VSCODE_LOG_STACK = false
@@ -73,7 +71,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.phyLxZMxgJ/Listeners
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
-# makefile (from `Makefile', line 23)
+# makefile (from `Makefile', line 24)
 OBJS = ${SRCS:.c=.o}
 # environment
 PWD = /Users/chudapak/code/diana/so_long
@@ -106,13 +104,13 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 13)
-SRCS = main.c 1_parsing.c 2_check_valid.c 3_add_comp_lines.c 4_invalid_map.c my_pixel_put.c my_key_hooks.c
+SRCS = main.c 1_parsing.c 2_check_valid.c 3_add_comp_lines.c 4_invalid_map.c 5_init_positions.c my_pixel_put.c my_key_hooks.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 1)
 LIBFT = -L libft -lft
-# makefile (from `Makefile', line 29)
-CC = gcc
+# makefile (from `Makefile', line 30)
+CC = gcc -g
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -137,6 +135,7 @@ TMPDIR = /var/folders/8q/rhdj3xf96_97nfbhqs4jm3xh0000gn/T/
 VSCODE_IPC_HOOK = /Users/chudapak/Library/Application Support/Code/1.58.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
+ 
 # environment
 MFLAGS = -Rrqp
 # automatic
@@ -186,9 +185,9 @@ VSCODE_PID = 66216
 
 # Directories
 
-# . (device 16777226, inode 10126120): 28 files, no impossibilities.
+# . (device 16777226, inode 10126120): 32 files, no impossibilities.
 
-# 28 files, no impossibilities in 1 directories.
+# 32 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -199,8 +198,9 @@ VSCODE_PID = 66216
 # Not a target:
 my_key_hooks.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2021-08-03 17:50:11
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -209,14 +209,16 @@ all: so_long
 #  Command-line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 my_pixel_put.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -228,6 +230,15 @@ my_pixel_put.o:
 #  File has not been updated.
 
 # Not a target:
+5_init_positions.o:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-03 17:50:11
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -236,19 +247,18 @@ my_pixel_put.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:22:29
+#  Last modified 2021-08-03 17:50:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
 
 test: so_long.h
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 69):
+#  commands to execute (from `Makefile', line 70):
 	gcc -g ${SRCS} ${STRJOIN}
 	${RM} ${OBJS}
 	
@@ -256,7 +266,7 @@ test: so_long.h
 # Not a target:
 so_long.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:20:07
+#  Last modified 2021-08-03 17:35:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -265,7 +275,7 @@ so_long.h:
 # Not a target:
 3_add_comp_lines.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -274,7 +284,7 @@ so_long.h:
 # Not a target:
 2_check_valid.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -284,7 +294,7 @@ so_long.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 42):
+#  commands to execute (from `Makefile', line 43):
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 	
 
@@ -293,21 +303,23 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 66):
+#  commands to execute (from `Makefile', line 67):
 	${RM} ${NAME} a.out
 	
 
 libft_42_school/libft.a:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 49):
+#  Last modified 2021-07-31 16:39:08
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 50):
 	cd ./libft_42_school; \
 	make; \
 	cp ${LIBA} ../; \
 	make clean; \
 	cd ..;
 	mv ${LIBA} ${NAME}
+ 
 	
 
 tclean: fclean test
@@ -324,9 +336,12 @@ tclean: fclean test
 
 # Not a target:
 libmlx.dylib:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2021-08-02 16:44:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -337,7 +352,7 @@ re: fclean all
 # Not a target:
 4_invalid_map.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -348,7 +363,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 63):
+#  commands to execute (from `Makefile', line 64):
 	${RM} ${OBJS}
 	
 
@@ -360,33 +375,34 @@ compile_libft: libft_42_school/libft.a
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-so_long: so_long.h main.o 1_parsing.o 2_check_valid.o 3_add_comp_lines.o 4_invalid_map.o my_pixel_put.o my_key_hooks.o libmlx.dylib libft_42_school/libft.a
+so_long: so_long.h main.o 1_parsing.o 2_check_valid.o 3_add_comp_lines.o 4_invalid_map.o 5_init_positions.o my_pixel_put.o my_key_hooks.o libmlx.dylib libft_42_school/libft.a
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2021-08-03 17:50:11
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 60):
+#  commands to execute (from `Makefile', line 61):
 	${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBFT_A} ${MLX}
 	
 
 # Not a target:
 1_parsing.o:
 #  Implicit rule search has been done.
-#  Last modified 2021-08-02 17:21:58
+#  Last modified 2021-08-03 17:50:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=1/60=2%
+# Load=24/1024=2%, Rehash=0, Collisions=1/62=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -398,6 +414,6 @@ so_long: so_long.h main.o 1_parsing.o 2_check_valid.o 3_add_comp_lines.o 4_inval
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug  2 17:22:33 2021
+# Finished Make data base on Tue Aug  3 17:50:19 2021
 
  

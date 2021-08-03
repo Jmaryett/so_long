@@ -1,17 +1,22 @@
 #include "so_long.h"
 //#include <math.h>
 
-static void	work_mlx(t_map *map)
+static void	work_mlx(t_map *map, char *array)
 {
 	t_all	all;
+	char	*relative_path;
 
+	relative_path = "./shrek.XPM";
+	player_position(array, &all.plps);
 	all.mlx = mlx_init();
-	all.img.img = mlx_new_image(all.mlx, map->width * 100, map->height * 100);
-	all.img.addr = mlx_get_data_addr(all.img.img, &all.img.bits_per_pixel, &all.img.line_len, &all.img.endian);
-	all.mlx_win = mlx_new_window(all.mlx, map->width * 100, map->height * 100, "so_long");
-	pixel_put_loop(&all, map->width * 100, map->height * 100);
+	//all.img.img = mlx_new_image(all.mlx, map->width * 100, map->height * 100);
+	//all.img.addr = mlx_get_data_addr(all.img.img, &all.img.bits_per_pixel, &all.img.line_len, &all.img.endian);
+	all.mlx_win = mlx_new_window(all.mlx, map->width, map->height, "so_long");
+	//pixel_put_loop(&all, map->width * 100, map->height * 100);
 	//my_mlx_pixel_put(&all.img, map->width * 100, map->height * 100, 0x00FFFF00); //в цикле пушить цвет
 	//mlx_put_image_to_window(all.mlx, all.mlx_win, all.img.img, 0, 0); // в цикле пушить спрайты или цвет потом
+	all.img.img = mlx_xpm_file_to_image(all.mlx, relative_path, &all.img.img_width, &all.img.img_height);
+	mlx_put_image_to_window(all.mlx, all.mlx_win, all.img.img, 0, 0);
 	mlx_hook(all.mlx_win, 2, 1L<<0, key_pressed, &all);
 	mlx_hook(all.mlx_win, 3, 1L<<1, key_released, &all);
 	mlx_hook(all.mlx_win, 17, 1L << 2, esc, &all);
@@ -50,7 +55,7 @@ int	main(int argc, char **argv)
 		|| !check_valid(array))
 			invalid_map(array);
 		else
-			work_mlx(&map);
+			work_mlx(&map, array);
 		/*else
 			printf ("%s", "Good map."); */
 	}

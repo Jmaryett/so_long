@@ -28,13 +28,25 @@ void init_key(t_var *var)
 int key_press(int keycode, t_var *var)
 {
 	if (keycode == 13)
+	{
 		var->w = 1;
+		var->height -= 7;
+	}
 	else if (keycode == 0)
+	{
 		var->a = 1;
+		var->width -= 7;
+	}
 	else if (keycode == 1)
+	{
 		var->s = 1;
+		var->height += 7;
+	}
 	else if (keycode == 2)
+	{
 		var->d = 1;
+		var->width += 7;
+	}
 	return (0);
 }
 
@@ -53,25 +65,8 @@ int key_release(int keycode, t_var *var)
 
 int move_img(t_var *var)
 {
-	//char *relative_path = "./test.xpm";
-	//var->img = mlx_xpm_file_to_image(var->mlx, relative_path, &var->img_width, &var->img_height);
-	//var->width = 600;
-	//var->height = 300;
-	//mlx_put_image_to_window(var->mlx, var->win, var->img, var->width, var->height);
-	if (var->fps % 50 == 0)
-	{
-		if (var->w == 1)
-		{
-			while (var->height > 0)
-			{
-				mlx_clear_window(var->mlx, var->win);
-				mlx_put_image_to_window(var->mlx, var->win, var->img, var->width, var->height);
-				var->height--;
-			}
-		}
-		//var->fps = 0;
-	}
-	var->fps++;
+	mlx_clear_window(var->mlx, var->win);
+	mlx_put_image_to_window(var->mlx, var->win, var->img, var->width, var->height);
 	return (0);
 }
 

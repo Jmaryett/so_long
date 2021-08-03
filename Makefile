@@ -15,6 +15,7 @@ SRCS	= main.c \
 		2_check_valid.c \
 		3_add_comp_lines.c \
 		4_invalid_map.c \
+		5_init_positions.c \
 		my_pixel_put.c \
 		my_key_hooks.c
 
@@ -26,7 +27,7 @@ RM	= rm -f
 
 AR 	= ar rc
 
-CC	= gcc
+CC	= gcc -g
 
 CFLAGS	= -Wall -Wextra -Werror
 
