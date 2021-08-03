@@ -1,14 +1,6 @@
 #include "so_long.h"
 
-static void	init_height_width(int len, int count)
-{
-	t_map	m;
-
-	m.height = count;
-	m.lenght = len;
-}
-
-int	check_height_width(char *array)
+int	check_height_width(char *array, t_map *map)
 {
 	int	i;
 	int	count;
@@ -29,7 +21,9 @@ int	check_height_width(char *array)
 	count++;
 	if (count == len || count == 0 || len == 0)
 		return (0);
-	printf ("%d\n%d\n", count, len);
+	map->height = count;
+	map->width = len;
+	//printf ("%d\n%d\n", count, len);
 	return (1);
 }
 
@@ -37,7 +31,6 @@ int	check_lines(char *array)
 {
 	int		i;
 	int		len;
-	int 	len2;
 	char	*comp;
 	
 	i = 0;
@@ -50,7 +43,7 @@ int	check_lines(char *array)
 		if (array[i] == '\n')
 		{
 			comp = comp_str(array + i + 1);
-			if (ft_strlen(comp) != len)
+			if ((int)ft_strlen(comp) != len)
 				return (0);
 			free (comp);
 		}

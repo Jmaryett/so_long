@@ -7,12 +7,13 @@ char	*comp_str(char *array)
 	char	*comp;
 
 	i = 0;
+	
 	if (!array)
 		return (NULL);
 	while (array[i] != '\n' && array[i] != '\0')
 		i++;
 	len = i;
-	comp = malloc(sizeof(char) * (len + 1));
+	comp = (char *)malloc(sizeof(char) * (len + 1));
 	if (!comp)
 		return (NULL);
 	i = -1;
