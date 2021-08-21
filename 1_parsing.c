@@ -1,38 +1,30 @@
 #include "so_long.h"
 
-static void	check_map_size(t_map *map)
-{
-	if (map->width < 100)
-		map->width *= 100;
-	if (map->height < 100)
-		map->height *= 100;
-}
-
 int	check_height_width(char *array, t_map *map)
 {
 	int	i;
-	int	count;
-	int	len;
+	int	height;
+	int	width;
 
-	count = 0;
+	height = 0;
 	i = 0;
 	while (array[i] != '\n')
 		i++;
-	len = i;
+	width = i;
 	i = 0;
 	while (array[i])
 	{
 		if (array[i] == '\n')
-			count++;
+			height++;
 		i++;	
 	}
-	count++;
-	if (/* count == len || */ count == 0 || len == 0)
+	height++;
+	if (height == 0 || width == 0)
 		return (0);
-	map->height = count;
-	map->width = len;
-	check_map_size(map);
-	//printf ("%d\n%d\n", count, len);
+	map->height = height;
+	map->width = width;
+	//printf("width - %d, height - %d\n", map->width, map->height);
+	//printf ("%d\n%d\n", height, width);
 	return (1);
 }
 
@@ -58,7 +50,6 @@ int	check_lines(char *array)
 		}
 		i++;	
 	}
-	//printf ("%d\n", len);
 	return (1);
 }
 

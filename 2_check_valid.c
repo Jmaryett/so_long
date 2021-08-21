@@ -82,5 +82,7 @@ int check_valid(char *array)
 		return (0);
 	if (!fir_las_char(t, len))
 		return (0);
+	if (!count_items(array))
+		return (0);
 	return (1);
 }

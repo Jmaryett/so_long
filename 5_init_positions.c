@@ -3,26 +3,26 @@
 void	player_position(char *array, t_plps *plps)
 {
 	int	i;
-	int	len;
-	int heig;
+	int	width;
+	int	height;
 
-	i = 0;
-	len = 0;
-	heig = 0;
-	while (array[i])
+	i = -1;
+	width = 0;
+	height = 0;
+	while (array[++i])
 	{
 		if (array[i] == '\n' || array[i] == '\0')
 		{
-			len = 0;
-			heig++;
+			width = 0;
+			height++;
 		}
 		if (array[i] == 'P')
 		{
-			plps->x = len;
-			plps->y = heig + 1;
+			plps->x = width;
+			plps->y = height;
+			array[i] = '0';
 		}
-		len++;
-		i++;	
+		width++;
 	}
 	printf ("%d\n%d\n", plps->x, plps->y);
 }
