@@ -48,5 +48,6 @@ int	drawing_map(t_all *all)
 		width++;
 	}
 	mlx_put_image_to_window(all->mlx, all->mlx_win, all->pl_img.img, all->plps.x * ELEM_SIZE, all->plps.y * ELEM_SIZE);
+	mlx_do_sync(all->mlx);
 	return (0);
 }
