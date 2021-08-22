@@ -1,3 +1,6 @@
 .DS-Store
-*.o
-map.ber
+**/*.o
+**/*.a
+**/map.ber
+.vscode/
+**/*.dSYM
