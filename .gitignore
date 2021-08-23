@@ -1,6 +1,5 @@
 .DS-Store
 **/*.o
 **/*.a
-**/map.ber
 .vscode/
 **/*.dSYM
