@@ -59,6 +59,7 @@ typedef struct s_pl_pos
 
 typedef struct	s_keys 
 {
+	int	count_moves;
 	int	w;
 	int	a;
 	int	s;
@@ -100,6 +101,7 @@ void	invalid_map(char *array);
 void	my_mlx_pixel_put(t_all *all, int width, int height, unsigned int color);
 void	player_position(char *array, t_plps *plps);
 void	count_coins(t_all *all, char *array);
+//void		count_moves(int keycode, t_all *all);
 void	relate_path(t_all *all);
 
 void	check_w(t_all *all, int i);

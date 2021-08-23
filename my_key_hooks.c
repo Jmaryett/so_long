@@ -7,12 +7,19 @@ int	esc(t_all *all)
 	return (0);
 }
 
+static void	count_moves(t_all *all)
+{
+	all->key.count_moves++;
+	printf ("Current number of moves = %d\n", all->key.count_moves);
+	return ;
+}
+
 static void	check_positions(t_all *all, char key)
 {
 	int	i;
 	
 	i = all->map.width + 1;
-	printf ("player x = %d\nplayer y = %d\n", all->plps.x, all->plps.y);
+	//printf ("player x = %d\nplayer y = %d\n", all->plps.x, all->plps.y);
 	if (key == 'w')
 	{
 		check_w(all, i);
@@ -71,6 +78,7 @@ int	key_pressed(int keycode, t_all *all)
 		all->key.d = 1;
 		check_positions(all, 'd');
 	}
+	count_moves(all);
 	return (0);
 }
 

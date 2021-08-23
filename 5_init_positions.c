@@ -39,5 +39,5 @@ void	player_position(char *array, t_plps *plps)
 		}
 		width++;
 	}
-	printf ("%d\n%d\n", plps->x, plps->y);
+	//printf ("%d\n%d\n", plps->x, plps->y);
 }
