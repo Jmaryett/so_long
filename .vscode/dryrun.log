@@ -1,6 +1,19 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/chudapak/code/diana/so_long'
-make: Nothing to be done for `all'.
- 
+gcc -g -Wall -Wextra -Werror -c main.c -o main.o
+gcc -g -Wall -Wextra -Werror -c 1_parsing.c -o 1_parsing.o
+gcc -g -Wall -Wextra -Werror -c 2_check_valid.c -o 2_check_valid.o
+gcc -g -Wall -Wextra -Werror -c 3_add_comp_lines.c -o 3_add_comp_lines.o
+gcc -g -Wall -Wextra -Werror -c 4_invalid_map.c -o 4_invalid_map.o
+gcc -g -Wall -Wextra -Werror -c 5_init_positions.c -o 5_init_positions.o
+gcc -g -Wall -Wextra -Werror -c my_pixel_put.c -o my_pixel_put.o
+gcc -g -Wall -Wextra -Werror -c my_key_hooks.c -o my_key_hooks.o
+cd ./libft_42_school; \
+			make; \
+			cp libft.a ../; \
+			make clean; \
+			cd ..;
+mv libft.a so_long
+gcc -g -Wall -Wextra -Werror -framework OpenGL -framework AppKit -o so_long main.o 1_parsing.o 2_check_valid.o 3_add_comp_lines.o 4_invalid_map.o 5_init_positions.o my_pixel_put.o my_key_hooks.o ./libft_42_school/libft.a libmlx.dylib
 make: Leaving directory `/Users/chudapak/code/diana/so_long'
  

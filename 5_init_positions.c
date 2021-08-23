@@ -1,5 +1,19 @@
 #include "so_long.h"
 
+void	count_coins(t_all *all, char *array)
+{
+	int	i;
+	
+	i = -1;
+	all->coin_count = 0;
+	while (array[++i])
+	{
+		if (array[i] == 'C')
+			all->coin_count++;
+	}
+	return ;
+}
+
 void	player_position(char *array, t_plps *plps)
 {
 	int	i;
@@ -15,6 +29,7 @@ void	player_position(char *array, t_plps *plps)
 		{
 			width = 0;
 			height++;
+			continue ;
 		}
 		if (array[i] == 'P')
 		{

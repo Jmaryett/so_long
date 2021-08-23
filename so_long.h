@@ -73,6 +73,7 @@ typedef	struct s_map
 
 typedef	struct s_all
 {
+	int			coin_count;
 	char		*array;
 	void		*mlx;
 	void		*mlx_win;
@@ -98,7 +99,14 @@ void	invalid_map(char *array);
 //void	pixel_put_loop(t_all *all, int width, int height);
 void	my_mlx_pixel_put(t_all *all, int width, int height, unsigned int color);
 void	player_position(char *array, t_plps *plps);
+void	count_coins(t_all *all, char *array);
 void	relate_path(t_all *all);
+
+void	check_w(t_all *all, int i);
+void	check_a(t_all *all, int i);
+void	check_s(t_all *all, int i);
+void	check_d(t_all *all, int i);
+
 int		drawing_map(t_all *all);
 void	draw_wall(t_all *all, int height, int width);
 void	draw_floor(t_all *all, int height, int width);

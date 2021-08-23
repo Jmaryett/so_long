@@ -13,12 +13,14 @@ HEADER = so_long.h
 SRCS	= main.c \
 		1_parsing.c \
 		2_check_valid.c \
-		2_add_check_valid.c \
+		2_1_check_valid.c \
 		3_add_comp_lines.c \
 		4_invalid_map.c \
 		5_init_positions.c \
 		6_relate_path.c \
-		7_drawing_sprites.c \
+		7_rendering_map.c \
+		8_drawing_sprites.c \
+		9_moving_checking.c \
 		my_key_hooks.c
 
 MLX_A = ./mlx/libmlx.dylib

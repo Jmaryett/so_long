@@ -4,9 +4,13 @@
 static void	work_mlx(t_all *all, char *array)
 {
 	player_position(array, &all->plps);
+	count_coins(all, array);
+	printf("coins = %d\n", all->coin_count);
+	printf ("player x = %d\nplayer y = %d\n", all->plps.x, all->plps.y);
 	all->mlx = mlx_init();
 	all->mlx_win = mlx_new_window(all->mlx, all->map.width * ELEM_SIZE, all->map.height * ELEM_SIZE, "so_long");
 	relate_path(all);
+	//printf ("ALL GOOD");
 	mlx_hook(all->mlx_win, 2, 1L<<0, key_pressed, all);
 	mlx_hook(all->mlx_win, 3, 1L<<1, key_released, all);
 	mlx_hook(all->mlx_win, 17, 1L<<2, esc, all);
