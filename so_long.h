@@ -95,7 +95,7 @@ char	*comp_str(char *array);
 int	check_height_width(char *array, t_map *map);
 int	check_valid(char *array);
 int	count_items(char *array);
-void	invalid_map(char *array);
+void	invalid_map(t_all *all, char *array);
 
 //void	pixel_put_loop(t_all *all, int width, int height);
 void	my_mlx_pixel_put(t_all *all, int width, int height, unsigned int color);

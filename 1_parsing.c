@@ -45,7 +45,10 @@ int	check_lines(char *array)
 		{
 			comp = comp_str(array + i + 1);
 			if ((int)ft_strlen(comp) != len)
+			{
+				free (comp);
 				return (0);
+			}
 			free (comp);
 		}
 		i++;	

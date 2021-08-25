@@ -70,7 +70,19 @@ static int	fir_las_char(char **t, int len)
 	return (1);
 }
 
-int check_valid(char *array)
+static char	**free_t(char **t)
+{
+	while (*t)
+	{
+		free (*t);
+		t++;
+	}
+	*t = NULL;
+	t = NULL;
+	return (t);
+}
+
+int	check_valid(char *array)
 {
 	char **t;
 	int len;
@@ -80,9 +92,11 @@ int check_valid(char *array)
 	t = define_t(array);
 	if (!fir_las_lin(t))
 		return (0);
-	if (!fir_las_char(t, len))
+	else if (!fir_las_char(t, len))
 		return (0);
-	if (!count_items(array))
+	else if (!count_items(array))
 		return (0);
+	t = free_t(t);
+	free (t);
 	return (1);
 }

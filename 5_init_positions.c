@@ -11,7 +11,7 @@ void	count_coins(t_all *all, char *array)
 		if (array[i] == 'C')
 			all->coin_count++;
 	}
-	return ;
+	//return ;
 }
 
 void	player_position(char *array, t_plps *plps)

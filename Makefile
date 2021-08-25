@@ -42,7 +42,9 @@ STRJOIN = ./libft_42_school/ft_strjoin.c \
 		./libft_42_school/ft_strdup.c \
 		./libft_42_school/ft_split.c
 
- #%.o: %.c
+OBJS2	= ${STRJOIN:.c=.o}
+
+#%.o: %.c
 #	 ${CC} ${CFLAGS} -Imlx -c $< -o $@ 
 
 .c.o:
@@ -58,14 +60,14 @@ ${MLX_A}:
 			cd ./mlx; \
 			make; \
 			mv ${MLX} ../; \
-			cd ./mlx; \
+			cd ../mlx; \
 			make clean
 
 ${LIBFT_A}:
 			cd ./libft_42_school; \
 			make; \
 			mv ${LIBA} ../; \
-			cd ./libft_42_school; \
+			cd ../libft_42_school; \
 			make clean
 	
 #${NAME}: ${OBJS} ${HEADER}
@@ -80,8 +82,8 @@ clean:
 fclean:	clean
 		${RM} ${NAME} a.out
 
-test:	${HEADER} ${OBJS} ${LIBFT_A} ${MLX_A} ${MLX} ${LIBA}
-		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBA} ${MLX}
+test:	${HEADER} ${OBJS} ${OBJS2} ${MLX}
+		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${OBJS2} ${MLX}
 
 tclean: fclean test
 
