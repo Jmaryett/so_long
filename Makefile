@@ -1,9 +1,3 @@
-LIBFT = -L libft -lft
-
-LIBFT_C = ./libft_42_school/*.c
-
-LIBFT_A = ./libft_42_school/libft.a
-
 LIBA = libft.a
 
 NAME = so_long
@@ -22,8 +16,6 @@ SRCS	= main.c \
 		8_drawing_sprites.c \
 		9_moving_checking.c \
 		my_key_hooks.c
-
-MLX_A = ./mlx/libmlx.dylib
 
 MLX = libmlx.dylib
 		
@@ -56,31 +48,31 @@ compile_libft: ${LIBFT_A}
 
 compile_mlx: ${MLX_A}
 
-${MLX_A}:
-			cd ../mlx; \
+${MLX}:
+			cd ./mlx; \
 			make; \
 			mv ${MLX} ../; \
-			cd ../mlx; \
+			cd ./mlx; \
 			make clean
 
-${LIBFT_A}:
+${LIBA}:
 			cd ./libft_42_school; \
 			make; \
 			mv ${LIBA} ../; \
-			cd ../libft_42_school; \
+			cd ./libft_42_school; \
 			make clean
 	
 #${NAME}: ${OBJS} ${HEADER}
 #		 ${CC} -g -o ${NAME} ${OBJS} ${LIBA}
 
-${NAME}: ${LIBA} ${HEADER} ${OBJS} ${MLX}
-		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBA} ${MLX}
+${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJS} 
+		${CC} ${CFLAGS} -framework  OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBA} ${MLX}
 
 clean:
 		${RM} ${OBJS}
 
 fclean:	clean
-		${RM} ${NAME} a.out
+		${RM} ${NAME} a.out ${LIBA} ${MLX}
 
 test:	${HEADER} ${OBJS} ${OBJS2} ${MLX}
 		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${OBJS2} ${MLX}
