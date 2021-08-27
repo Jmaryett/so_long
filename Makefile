@@ -15,7 +15,7 @@ SRCS	= main.c \
 		2_check_valid.c \
 		2_1_check_valid.c \
 		3_add_comp_lines.c \
-		4_invalid_map.c \
+		4_error_cases.c \
 		5_init_positions.c \
 		6_relate_path.c \
 		7_rendering_map.c \
@@ -57,7 +57,7 @@ compile_libft: ${LIBFT_A}
 compile_mlx: ${MLX_A}
 
 ${MLX_A}:
-			cd ./mlx; \
+			cd ../mlx; \
 			make; \
 			mv ${MLX} ../; \
 			cd ../mlx; \
@@ -73,7 +73,7 @@ ${LIBFT_A}:
 #${NAME}: ${OBJS} ${HEADER}
 #		 ${CC} -g -o ${NAME} ${OBJS} ${LIBA}
 
-${NAME}: ${HEADER} ${OBJS} ${MLX} ${LIBA}
+${NAME}: ${LIBA} ${HEADER} ${OBJS} ${MLX}
 		${CC} ${CFLAGS} -framework OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBA} ${MLX}
 
 clean:

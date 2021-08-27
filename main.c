@@ -48,16 +48,17 @@ int	main(int argc, char **argv)
 		init_keys(&all.key);
 		fd = open(argv[1], O_RDONLY);
 		if (fd < 0)
-			return (0);
+			invalid_file();
 		array = filling_array(fd);
 		close (fd);
 		all.array = array;
-		if (!check_lines(array) || !check_height_width(array, &all.map)
-		|| !check_valid(array))
-			invalid_map(&all, array);
-		work_mlx(&all, array);
+ 		if (!check_lines(array) || !check_height_width(array, &all.map)
+			|| !check_valid(array))
+			invalid_map(array);
+		else
+			work_mlx(&all, array);
 	}
 	else
-		printf ("%s\n", "Invalid input.");
+		invalid_input();
 	return (0);
 }

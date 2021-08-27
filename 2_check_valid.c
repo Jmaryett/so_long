@@ -30,7 +30,6 @@ static char	**define_t(char *array)
 {
 	char **t;
 
-	t = NULL;
 	t = ft_split(array, '\n');
 	return (t);
 }
@@ -58,7 +57,9 @@ static int	fir_las_char(char **t, int len)
 		{	
 			while (t[i][j])
 			{
-				if (t[i][j] != '1' && t[i][j] != '0' && t[i][j] != 'C' && t[i][j] != 'P' && t[i][j] != 'E')
+				if (t[i][j] != '1' && t[i][j] != '0' 
+					&& t[i][j] != 'C' && t[i][j] != 'P' 
+					&& t[i][j] != 'E')
 					return (0);
 				j++;
 			}
@@ -70,16 +71,17 @@ static int	fir_las_char(char **t, int len)
 	return (1);
 }
 
-static char	**free_t(char **t)
+static void	free_t(char **t)
 {
-	while (*t)
+	int	i;
+
+	i = 0;
+	while (t[i])
 	{
-		free (*t);
-		t++;
+		free (t[i]);
+		i++;
 	}
-	*t = NULL;
-	t = NULL;
-	return (t);
+	free(t);
 }
 
 int	check_valid(char *array)
@@ -96,7 +98,6 @@ int	check_valid(char *array)
 		return (0);
 	else if (!count_items(array))
 		return (0);
-	t = free_t(t);
-	free (t);
+	free_t(t);
 	return (1);
 }
