@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   7_rendering_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:20:16 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:20:18 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static int	rendering_map(t_all *all, int i, int w, int h)
@@ -22,7 +34,7 @@ int	drawing_map(t_all *all)
 	i = -1;
 	width = 0;
 	height = 0;
-	while(all->array[++i])
+	while (all->array[++i])
 	{
 		if (all->array[i] == '\n' || all->array[i] == '\0')
 		{
@@ -34,7 +46,8 @@ int	drawing_map(t_all *all)
 			i = rendering_map(all, i, width, height);
 		width++;
 	}
-	mlx_put_image_to_window(all->mlx, all->mlx_win, all->pl_img.img, all->plps.x * ELEM_SIZE, all->plps.y * ELEM_SIZE);
+	mlx_put_image_to_window(all->mlx, all->mlx_win, all->pl_img.img,
+		all->plps.x * ELEM_SIZE, all->plps.y * ELEM_SIZE);
 	mlx_do_sync(all->mlx);
 	return (0);
 }

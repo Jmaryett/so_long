@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   3_add_comp_lines.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:20:44 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:20:45 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	*comp_str(char *array)
@@ -7,7 +19,6 @@ char	*comp_str(char *array)
 	char	*comp;
 
 	i = 0;
-	
 	if (!array)
 		return (NULL);
 	while (array[i] != '\n' && array[i] != '\0')

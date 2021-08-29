@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   5_init_positions.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:20:31 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:20:32 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	count_coins(t_all *all, char *array)
 {
 	int	i;
-	
+
 	i = -1;
 	all->coin_count = 0;
 	while (array[++i])
@@ -11,7 +23,6 @@ void	count_coins(t_all *all, char *array)
 		if (array[i] == 'C')
 			all->coin_count++;
 	}
-	//return ;
 }
 
 void	player_position(char *array, t_plps *plps)
@@ -39,5 +50,4 @@ void	player_position(char *array, t_plps *plps)
 		}
 		width++;
 	}
-	//printf ("%d\n%d\n", plps->x, plps->y);
 }

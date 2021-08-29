@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   2_check_valid.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:20:50 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:20:51 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static int	fir_las_lin(char **t)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = -1;
@@ -25,18 +37,17 @@ static int	fir_las_lin(char **t)
 	return (1);
 }
 
-
 static char	**define_t(char *array)
 {
-	char **t;
+	char	**t;
 
 	t = ft_split(array, '\n');
 	return (t);
 }
 
-static int array_len(char *array)
+static int	array_len(char *array)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (array[len] != '\n')
@@ -57,8 +68,8 @@ static int	fir_las_char(char **t, int len)
 		{	
 			while (t[i][j])
 			{
-				if (t[i][j] != '1' && t[i][j] != '0' 
-					&& t[i][j] != 'C' && t[i][j] != 'P' 
+				if (t[i][j] != '1' && t[i][j] != '0'
+					&& t[i][j] != 'C' && t[i][j] != 'P'
 					&& t[i][j] != 'E')
 					return (0);
 				j++;
@@ -71,23 +82,10 @@ static int	fir_las_char(char **t, int len)
 	return (1);
 }
 
-static void	free_t(char **t)
-{
-	int	i;
-
-	i = 0;
-	while (t[i])
-	{
-		free (t[i]);
-		i++;
-	}
-	free(t);
-}
-
 int	check_valid(char *array)
 {
-	char **t;
-	int len;
+	char	**t;
+	int		len;
 
 	t = NULL;
 	len = array_len(array);

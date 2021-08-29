@@ -1,3 +1,5 @@
+LIBA_C = ./libft_42_school/*.c
+
 LIBA = libft.a
 
 NAME = so_long
@@ -55,15 +57,12 @@ ${MLX}:
 			cd ./mlx; \
 			make clean
 
-${LIBA}:
+${LIBA}: ${LIBA_C}
 			cd ./libft_42_school; \
 			make; \
 			mv ${LIBA} ../; \
 			cd ./libft_42_school; \
 			make clean
-	
-#${NAME}: ${OBJS} ${HEADER}
-#		 ${CC} -g -o ${NAME} ${OBJS} ${LIBA}
 
 ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJS} 
 		${CC} ${CFLAGS} -framework  OpenGL -framework AppKit -o ${NAME} ${OBJS} ${LIBA} ${MLX}
@@ -79,6 +78,9 @@ test:	${HEADER} ${OBJS} ${OBJS2} ${MLX}
 
 tclean: fclean test
 
+norm:
+		norminette ${SRCS} ${HEADER}
+
 re:		fclean all
 
-.PHONY: re clean fclean all test tclean compile_libft compile_mlx
+.PHONY: re clean fclean all test tclean compile_libft compile_mlx norm

@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 17:17:02 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 17:27:39 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 
 # define SO_LONG_H
 
-#include "./libft_42_school/libft.h"
-#include "./mlx/mlx.h"
+# include	"./libft_42_school/libft.h"
+# include	"./mlx/mlx.h"
 
 # ifndef BUFFER_SIZE
-#	define BUFFER_SIZE 32
+#  define BUFFER_SIZE 32
 # endif
 
 # define ELEM_SIZE 35
@@ -57,7 +69,7 @@ typedef struct s_pl_pos
 	int	y;
 }				t_plps;
 
-typedef struct	s_keys 
+typedef struct s_keys
 {
 	int	count_moves;
 	int	w;
@@ -66,21 +78,21 @@ typedef struct	s_keys
 	int	d;
 }				t_keys;
 
-typedef	struct s_map
+typedef struct s_map
 {
 	int	height;
 	int	width;
 }				t_map;
 
-typedef	struct s_all
+typedef struct s_all
 {
-	int			coin_count;
-	char		*array;
-	void		*mlx;
-	void		*mlx_win;
-	t_map		map;
-	t_keys		key;
-	t_plps		plps;
+	int				coin_count;
+	char			*array;
+	void			*mlx;
+	void			*mlx_win;
+	t_map			map;
+	t_keys			key;
+	t_plps			plps;
 	t_player_img	pl_img;
 	t_wall_img		wall_img;
 	t_floor_img		floor_img;
@@ -88,22 +100,20 @@ typedef	struct s_all
 	t_exit_img		exit_img;
 }				t_all;
 
-
 char	*filling_array(int fd);
-int	check_lines(char *array);
+int		check_lines(char *array);
 char	*comp_str(char *array);
-int	check_height_width(char *array, t_map *map);
-int	check_valid(char *array);
-int	count_items(char *array);
+int		check_height_width(char *array, t_map *map);
+int		check_valid(char *array);
+void	free_t(char **t);
+int		count_items(char *array);
 void	invalid_map(char *array);
 void	invalid_file(void);
 void	invalid_input(void);
 
-//void	pixel_put_loop(t_all *all, int width, int height);
 void	my_mlx_pixel_put(t_all *all, int width, int height, unsigned int color);
 void	player_position(char *array, t_plps *plps);
 void	count_coins(t_all *all, char *array);
-//void		count_moves(int keycode, t_all *all);
 void	relate_path(t_all *all);
 
 void	check_w(t_all *all, int i);
@@ -118,8 +128,8 @@ void	draw_collect(t_all *all, int height, int width);
 void	draw_exit(t_all *all, int height, int width);
 //void	check_positions(t_all *all, char key);
 
-int	key_pressed(int keycode, t_all *all);
-int	key_released(int keycode, t_all *all);
-int	esc(t_all *all);
+int		key_pressed(int keycode, t_all *all);
+int		key_released(int keycode, t_all *all);
+int		esc(t_all *all);
 
 #endif

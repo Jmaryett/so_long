@@ -1,4 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   2_1_check_valid.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:20:57 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:20:58 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
+
+void	free_t(char **t)
+{
+	int	i;
+
+	i = 0;
+	while (t[i])
+	{
+		free (t[i]);
+		i++;
+	}
+	free(t);
+}
 
 static int	count_result(int p, int c, int e)
 {
@@ -22,7 +47,7 @@ int	count_items(char *array)
 	count_coll = 0;
 	count_exit = 0;
 	count_player = 0;
-	while(array[++i])
+	while (array[++i])
 	{
 		if (array[i] == 'P')
 			count_player++;

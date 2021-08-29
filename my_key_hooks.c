@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_key_hooks.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/29 19:22:08 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/29 19:22:23 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	esc(t_all *all)
@@ -7,51 +19,19 @@ int	esc(t_all *all)
 	return (0);
 }
 
-static void	count_moves(t_all *all)
-{
-	all->key.count_moves++;
-	printf ("Current number of moves = %d\n", all->key.count_moves);
-	return ;
-}
-
 static void	check_positions(t_all *all, char key)
 {
 	int	i;
-	
+
 	i = all->map.width + 1;
-	//printf ("player x = %d\nplayer y = %d\n", all->plps.x, all->plps.y);
 	if (key == 'w')
-	{
 		check_w(all, i);
-		/* if (all->array[i * (all->plps.y - 1) + all->plps.x] != '1')
-			all->plps.y -= 1;
-		else
-			all->plps.y = all->plps.y; */
-	}
 	else if (key == 'a')
-	{
 		check_a(all, i);
-		/* if (all->array[i *all->plps.y + all->plps.x - 1] != '1')
-			all->plps.x -= 1;
-		else
-			all->plps.x = all->plps.x; */
-	}
 	else if (key == 's')
-	{
 		check_s(all, i);
-		/* if (all->array[i * (all->plps.y + 1) + all->plps.x] != '1')
-			all->plps.y += 1;
-		else
-			all->plps.y = all->plps.y; */
-	}
 	else if (key == 'd')
-	{
 		check_d(all, i);
-		/* if (all->array[i * all->plps.y + all->plps.x + 1] != '1')
-			all->plps.x += 1;
-		else
-			all->plps.x = all->plps.x; */
-	}
 }
 
 int	key_pressed(int keycode, t_all *all)
@@ -78,7 +58,6 @@ int	key_pressed(int keycode, t_all *all)
 		all->key.d = 1;
 		check_positions(all, 'd');
 	}
-	count_moves(all);
 	return (0);
 }
 
