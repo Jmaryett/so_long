@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:56 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 17:49:10 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 18:55:44 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ int	main(int argc, char **argv)
 		init_map(&all.map);
 		init_keys(&all.key);
 		directory_check(&argv[1]);
-		fd = open(argv[1], O_RDONLY);
-		if (fd < 0)
-			invalid_file();
+		check_file_name(argv[1]);
+		fd = check_fd(argv[1]);
 		array = filling_array(fd);
 		close (fd);
 		all.array = array;

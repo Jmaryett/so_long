@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 17:17:02 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 16:21:22 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 18:47:36 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,9 @@ typedef struct s_all
 	t_coll_img		coll_img;
 	t_exit_img		exit_img;
 }				t_all;
+
+void	check_file_name(char *filename);
+int		check_fd(char *file);
 
 char	*filling_array(int fd);
 int		check_lines(char *array);

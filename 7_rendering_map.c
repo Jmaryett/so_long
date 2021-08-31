@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:16 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:18 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 19:07:59 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	drawing_map(t_all *all)
 	i = -1;
 	width = 0;
 	height = 0;
+	mlx_clear_window(all->mlx, all->mlx_win);
 	while (all->array[++i])
 	{
 		if (all->array[i] == '\n' || all->array[i] == '\0')

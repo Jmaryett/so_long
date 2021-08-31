@@ -7,6 +7,7 @@ NAME = so_long
 HEADER = so_long.h
 
 SRCS	= main.c \
+		check_fd_and_file.c \
 		1_parsing.c \
 		2_check_valid.c \
 		2_1_check_valid.c \

@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4_error_cases.c                                    :+:      :+:    :+:   */
+/*   check_fd_and_file.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/29 19:20:38 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 18:34:58 by jmaryett         ###   ########.fr       */
+/*   Created: 2021/08/31 18:47:30 by jmaryett          #+#    #+#             */
+/*   Updated: 2021/08/31 18:55:30 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	invalid_map(char *array)
+void	check_file_name(char *filename)
 {
-	write (1, "Error\nInvalid map.\n", 19);
-	free (array);
-	exit (0);
+	int	len;
+
+	len = ft_strlen(filename);
+	if (filename[len - 1] != 'r')
+		invalid_input();
+	else if (filename[len - 2] != 'e')
+		invalid_input();
+	else if (filename[len - 3] != 'b')
+		invalid_input();
+	else if (filename[len - 4] != '.')
+		invalid_input();
+	return ;
 }
 
-void	invalid_file(void)
+int	check_fd(char *file)
 {
-	write (1, "Error\nCan't open file.\n", 23);
-	exit (0);
-}
+	int	fd;
 
-void	invalid_input(void)
-{
-	write (1, "Error\nInvalid input.\n", 21);
-	exit (0);
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
+		invalid_file();
+	return (fd);
 }
