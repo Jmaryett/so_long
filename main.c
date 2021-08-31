@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:56 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:21:57 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 16:15:18 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	work_mlx(t_all *all, char *array)
 	count_coins(all, array);
 	all->mlx = mlx_init();
 	all->mlx_win = mlx_new_window(all->mlx, all->map.width * ELEM_SIZE,
-			all->map.height * ELEM_SIZE, "so_long");
+			all->map.height * ELEM_SIZE, "./so_long");
 	relate_path(all);
 	mlx_hook(all->mlx_win, 2, 1L << 0, key_pressed, all);
 	mlx_hook(all->mlx_win, 3, 1L << 1, key_released, all);

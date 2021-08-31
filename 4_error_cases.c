@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:38 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:38 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 15:39:39 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	invalid_map(char *array)
 {
-	printf ("%s\n", "Invalid map.");
+	write (1, "Invalid map.\n", 13);
 	free (array);
 	exit (0);
 }
 
 void	invalid_file(void)
 {
-	printf ("%s\n", "Can't open file.");
+	write (1, "Can't open file.\n", 17);
 	exit (0);
 }
 
 void	invalid_input(void)
 {
-	printf ("%s\n", "Invalid input.");
+	write (1, "Invalid input.\n", 15);
 	exit (0);
 }

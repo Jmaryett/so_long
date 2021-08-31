@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 17:17:02 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 17:27:39 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 16:11:18 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define SO_LONG_H
 
-# include	"./libft_42_school/libft.h"
+# include	"./libft/libft.h"
 # include	"./mlx/mlx.h"
 
 # ifndef BUFFER_SIZE
@@ -131,5 +131,9 @@ void	draw_exit(t_all *all, int height, int width);
 int		key_pressed(int keycode, t_all *all);
 int		key_released(int keycode, t_all *all);
 int		esc(t_all *all);
+void	check_exit_for_w(t_all *all, int i);
+void	check_exit_for_a(t_all *all, int i);
+void	check_exit_for_s(t_all *all, int i);
+void	check_exit_for_d(t_all *all, int i);
 
 #endif

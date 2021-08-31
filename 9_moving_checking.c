@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:19:59 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:01 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 15:57:08 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void	check_w(t_all *all, int i)
 	if (all->array[i * (all->plps.y - 1) + all->plps.x] != '1')
 	{
 		all->plps.y -= 1;
-		all->key.count_moves++;
-		printf ("Current number of moves = %d\n", all->key.count_moves);
+		check_exit_for_w(all, i);
 	}
 	if (all->array[i * all->plps.y + all->plps.x] == 'C')
 	{
@@ -42,8 +41,7 @@ void	check_a(t_all *all, int i)
 	if (all->array[i * all->plps.y + all->plps.x - 1] != '1')
 	{
 		all->plps.x -= 1;
-		all->key.count_moves++;
-		printf ("Current number of moves = %d\n", all->key.count_moves);
+		check_exit_for_a(all, i);
 	}
 	if (all->array[i * all->plps.y + all->plps.x] == 'C')
 	{
@@ -67,8 +65,7 @@ void	check_s(t_all *all, int i)
 	if (all->array[i * (all->plps.y + 1) + all->plps.x] != '1')
 	{
 		all->plps.y += 1;
-		all->key.count_moves++;
-		printf ("Current number of moves = %d\n", all->key.count_moves);
+		check_exit_for_s(all, i);
 	}
 	if (all->array[i * all->plps.y + all->plps.x] == 'C')
 	{
@@ -92,8 +89,7 @@ void	check_d(t_all *all, int i)
 	if (all->array[i * all->plps.y + all->plps.x + 1] != '1')
 	{
 		all->plps.x += 1;
-		all->key.count_moves++;
-		printf ("Current number of moves = %d\n", all->key.count_moves);
+		check_exit_for_d(all, i);
 	}
 	if (all->array[i * all->plps.y + all->plps.x] == 'C')
 	{

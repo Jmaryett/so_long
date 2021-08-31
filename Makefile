@@ -1,4 +1,4 @@
-LIBA_C = ./libft_42_school/*.c
+LIBA_C = ./libft/*.c
 
 LIBA = libft.a
 
@@ -17,6 +17,7 @@ SRCS	= main.c \
 		7_rendering_map.c \
 		8_drawing_sprites.c \
 		9_moving_checking.c \
+		10_check_exit.c \
 		my_key_hooks.c
 
 MLX = libmlx.dylib
@@ -31,15 +32,12 @@ CC	= gcc -g
 
 CFLAGS	= -Wall -Wextra -Werror
 
-STRJOIN = ./libft_42_school/ft_strjoin.c \
-		./libft_42_school/ft_strlen.c \
-		./libft_42_school/ft_strdup.c \
-		./libft_42_school/ft_split.c
+STRJOIN = ./libft/ft_strjoin.c \
+		./libft/ft_strlen.c \
+		./libft/ft_strdup.c \
+		./libft/ft_split.c
 
 OBJS2	= ${STRJOIN:.c=.o}
-
-#%.o: %.c
-#	 ${CC} ${CFLAGS} -Imlx -c $< -o $@ 
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -58,10 +56,10 @@ ${MLX}:
 			make clean
 
 ${LIBA}: ${LIBA_C}
-			cd ./libft_42_school; \
+			cd ./libft; \
 			make; \
 			mv ${LIBA} ../; \
-			cd ./libft_42_school; \
+			cd ./libft; \
 			make clean
 
 ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJS} 
