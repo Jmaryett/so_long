@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:03 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:21:03 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 17:55:50 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,22 @@ int	check_height_width(char *array, t_map *map)
 	return (1);
 }
 
+static void	check_array(char *array)
+{
+	if (array == NULL)
+		invalid_map(array);
+	else
+		return ;
+}
+
+static void	check_one_line(char *array, int i)
+{
+	if (array[i++] == '\0')
+		invalid_map(array);
+	else
+		return ;
+}
+
 int	check_lines(char *array)
 {
 	int		i;
@@ -45,13 +61,14 @@ int	check_lines(char *array)
 	char	*comp;
 
 	i = 0;
-	comp = NULL;
-	while (array[i] != '\n')
+	check_array(array);
+	while (array[i] != '\n' && array[i] != '\0')
 		i++;
 	len = i;
+	check_one_line(array, i);
 	while (array[i])
 	{
-		if (array[i] == '\n')
+		if (array[i] == '\n' || array[i] == '\0')
 		{
 			comp = comp_str(array + i + 1);
 			if ((int)ft_strlen(comp) != len)
