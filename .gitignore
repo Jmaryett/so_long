@@ -3,3 +3,4 @@
 **/*.a
 .vscode/
 **/*.dSYM
+examples_mlx/
