@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 17:17:02 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 16:11:18 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/08/31 16:21:22 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ void	draw_wall(t_all *all, int height, int width);
 void	draw_floor(t_all *all, int height, int width);
 void	draw_collect(t_all *all, int height, int width);
 void	draw_exit(t_all *all, int height, int width);
-//void	check_positions(t_all *all, char key);
 
 int		key_pressed(int keycode, t_all *all);
 int		key_released(int keycode, t_all *all);
