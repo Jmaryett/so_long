@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   10_check_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 15:57:36 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 15:57:38 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/02 15:54:06 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_exit_for_w(t_all *all, int i)
+void	check_exit_for_w(t_all *all)
 {
-	if (all->array[i * all->plps.y + all->plps.x] == 'E')
+	if (all->arr[all->plps.y][all->plps.x] == 'E')
 	{
 		if (all->coin_count != 0)
 			return ;
@@ -29,9 +29,9 @@ void	check_exit_for_w(t_all *all, int i)
 	return ;
 }
 
-void	check_exit_for_a(t_all *all, int i)
+void	check_exit_for_a(t_all *all)
 {
-	if (all->array[i * all->plps.y + all->plps.x] == 'E')
+	if (all->arr[all->plps.y][all->plps.x] == 'E')
 	{
 		if (all->coin_count != 0)
 			return ;
@@ -46,9 +46,9 @@ void	check_exit_for_a(t_all *all, int i)
 	return ;
 }
 
-void	check_exit_for_s(t_all *all, int i)
+void	check_exit_for_s(t_all *all)
 {
-	if (all->array[i * all->plps.y + all->plps.x] == 'E')
+	if (all->arr[all->plps.y][all->plps.x] == 'E')
 	{
 		if (all->coin_count != 0)
 			return ;
@@ -63,9 +63,9 @@ void	check_exit_for_s(t_all *all, int i)
 	return ;
 }
 
-void	check_exit_for_d(t_all *all, int i)
+void	check_exit_for_d(t_all *all)
 {
-	if (all->array[i * all->plps.y + all->plps.x] == 'E')
+	if (all->arr[all->plps.y][all->plps.x] == 'E')
 	{
 		if (all->coin_count != 0)
 			return ;

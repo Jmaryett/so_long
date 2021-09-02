@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5_init_positions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:31 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:32 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:55:07 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,26 @@ void	count_coins(t_all *all, char *array)
 	}
 }
 
-void	player_position(char *array, t_plps *plps)
+void	player_position(t_all *all)
 {
-	int	i;
 	int	width;
 	int	height;
 
-	i = -1;
 	width = 0;
 	height = 0;
-	while (array[++i])
+	while (all->arr[height])
 	{
-		if (array[i] == '\n' || array[i] == '\0')
+		while(all->arr[height][width])
 		{
-			width = 0;
-			height++;
-			continue ;
+			if (all->arr[height][width] == 'P')
+			{
+				all->plps.x = width;
+				all->plps.y = height;
+				all->arr[height][width] = '0';
+			}
+			width++;
 		}
-		if (array[i] == 'P')
-		{
-			plps->x = width;
-			plps->y = height;
-			array[i] = '0';
-		}
-		width++;
+		width = 0;
+		height++;
 	}
 }

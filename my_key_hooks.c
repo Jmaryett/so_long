@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_key_hooks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:22:08 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:22:23 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:54:44 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ int	esc(t_all *all)
 
 static void	check_positions(t_all *all, char key)
 {
-	int	i;
-
-	i = all->map.width + 1;
 	if (key == 'w')
-		check_w(all, i);
+		check_w(all);
 	else if (key == 'a')
-		check_a(all, i);
+		check_a(all);
 	else if (key == 's')
-		check_s(all, i);
+		check_s(all);
 	else if (key == 'd')
-		check_d(all, i);
+		check_d(all);
 }
 
 int	key_pressed(int keycode, t_all *all)

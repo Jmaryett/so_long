@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   2_check_valid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:50 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:51 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/01 14:55:40 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static int	fir_las_char(char **t, int len)
 	return (1);
 }
 
-int	check_valid(char *array)
+char	**check_valid(char *array)
 {
 	char	**t;
 	int		len;
@@ -90,12 +90,13 @@ int	check_valid(char *array)
 	t = NULL;
 	len = array_len(array);
 	t = define_t(array);
+	//init_arr(all, t);
 	if (!fir_las_lin(t))
 		return (0);
 	else if (!fir_las_char(t, len))
 		return (0);
 	else if (!count_items(array))
 		return (0);
-	free_t(t);
-	return (1);
+	//free_t(t);
+	return (t);
 }

@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug",
 			"program": "${workspaceFolder}/so_long",
-			"args": ["/Users/jmaryett/Desktop/so_long/test.ber"],
+			"args": ["/Users/chudapak/code/diana/so_long/map.ber"],
 			"cwd": "${workspaceFolder}"
 		}
 	]

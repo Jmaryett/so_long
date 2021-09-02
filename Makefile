@@ -15,7 +15,7 @@ SRCS	= main.c \
 		4_error_cases.c \
 		5_init_positions.c \
 		6_relate_path.c \
-		7_rendering_map.c \
+		7_drawing_map.c \
 		8_drawing_sprites.c \
 		9_moving_checking.c \
 		10_check_exit.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:56 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 18:55:44 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:54:55 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 static void	work_mlx(t_all *all, char *array)
 {
-	player_position(array, &all->plps);
+	player_position(all);
+	printf ("pl x = %d\npl y = %d\n", all->plps.x, all->plps.y);
 	count_coins(all, array);
 	all->mlx = mlx_init();
 	all->mlx_win = mlx_new_window(all->mlx, all->map.width * ELEM_SIZE,
 			all->map.height * ELEM_SIZE, "./so_long");
 	relate_path(all);
+	printf ("after relate path all good\n");
+	drawing_map(all);
+	draw_player(all);
 	mlx_hook(all->mlx_win, 2, 1L << 0, key_pressed, all);
 	mlx_hook(all->mlx_win, 3, 1L << 1, key_released, all);
 	mlx_hook(all->mlx_win, 17, 1L << 2, esc, all);
-	mlx_loop_hook(all->mlx, drawing_map, all);
 	mlx_loop(all->mlx);
 }
 
@@ -69,9 +72,10 @@ int	main(int argc, char **argv)
 		array = filling_array(fd);
 		close (fd);
 		all.array = array;
-		if (!check_lines(array) || !check_height_width(array, &all.map)
-			|| !check_valid(array))
-			invalid_map(array);
+		all.arr = check_valid(array);
+		if (!check_lines(array) || all.arr == NULL
+			|| !init_height_width(&all))
+			invalid_map();
 		else
 			work_mlx(&all, array);
 	}

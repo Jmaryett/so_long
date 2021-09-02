@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   6_relate_path.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:24 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:25 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/01 15:09:52 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	xpm_files(t_all *all)
 	all->exit_img.exit = "./exit.xpm";
 	all->coll_img.collec = "./collectible.xpm";
 	all->wall_img.wall = "./wall.xpm";
+	printf ("xpm files all good\n");
 }
 
 static void	xpm_to_img(t_all *all)
@@ -33,10 +34,12 @@ static void	xpm_to_img(t_all *all)
 			&all->wall_img.img_width, &all->wall_img.img_height);
 	all->exit_img.img = mlx_xpm_file_to_image(all->mlx, all->exit_img.exit,
 			&all->exit_img.img_width, &all->exit_img.img_height);
+	printf ("xpm to img all good\n");
 }
 
 void	relate_path(t_all *all)
 {
 	xpm_files(all);
 	xpm_to_img(all);
+	printf ("relate path all good\n");
 }

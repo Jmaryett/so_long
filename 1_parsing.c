@@ -3,45 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   1_parsing.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:03 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/31 17:55:50 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/01 15:08:03 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_height_width(char *array, t_map *map)
+int	init_height_width(t_all *all)
 {
-	int	i;
 	int	height;
 	int	width;
+	int	len;
 
 	height = 0;
-	i = 0;
-	while (array[i] != '\n')
-		i++;
-	width = i;
-	i = 0;
-	while (array[i])
+	width = 0;
+	len = 0;
+	while (all->arr[height])
 	{
-		if (array[i] == '\n')
-			height++;
-		i++;
+		while (all->arr[height][width])
+		{
+			width++;
+			len = width;
+		}
+		width = 0;
+		height++;
 	}
-	height++;
-	if (height == 0 || width == 0)
-		return (0);
-	map->height = height;
-	map->width = width;
+	if (height == 0 || len == 0)
+		invalid_map();
+	all->map.height = height;
+	all->map.width = len;
+	printf ("all good\n");
 	return (1);
 }
 
 static void	check_array(char *array)
 {
 	if (array == NULL)
-		invalid_map(array);
+		invalid_map();
 	else
 		return ;
 }
@@ -49,7 +50,7 @@ static void	check_array(char *array)
 static void	check_one_line(char *array, int i)
 {
 	if (array[i++] == '\0')
-		invalid_map(array);
+		invalid_map();
 	else
 		return ;
 }
@@ -80,6 +81,7 @@ int	check_lines(char *array)
 		}
 		i++;
 	}
+	printf ("all good\n");
 	return (1);
 }
 

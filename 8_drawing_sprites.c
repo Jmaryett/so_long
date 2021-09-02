@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   8_drawing_sprites.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:07 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:08 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:54:50 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ void	draw_exit(t_all *all, int height, int width)
 {
 	mlx_put_image_to_window(all->mlx, all->mlx_win, all->exit_img.img,
 		width * ELEM_SIZE, height * ELEM_SIZE);
+}
+
+int	draw_player(t_all *all)
+{
+	mlx_put_image_to_window(all->mlx, all->mlx_win, all->pl_img.img,
+		all->plps.x * ELEM_SIZE, all->plps.y * ELEM_SIZE);
+	return (0);
 }

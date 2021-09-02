@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   2_1_check_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:57 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/08/29 19:20:58 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/01 14:54:45 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_t(char **t)
+/* void	free_t(char **t)
 {
 	int	i;
 
@@ -23,6 +23,14 @@ void	free_t(char **t)
 		i++;
 	}
 	free(t);
+} */
+
+void	init_arr(t_all *all, char **t)
+{
+	if (t == NULL)
+		invalid_map();
+	all->arr = t;
+	return ;
 }
 
 static int	count_result(int p, int c, int e)
