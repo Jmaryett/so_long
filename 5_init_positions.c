@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5_init_positions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:31 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/02 16:55:07 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:36:52 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	player_position(t_all *all)
 	height = 0;
 	while (all->arr[height])
 	{
-		while(all->arr[height][width])
+		while (all->arr[height][width])
 		{
 			if (all->arr[height][width] == 'P')
 			{

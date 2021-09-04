@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 17:17:02 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/02 16:19:16 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 17:32:31 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,9 +137,9 @@ int		draw_player(t_all *all);
 int		key_pressed(int keycode, t_all *all);
 int		key_released(int keycode, t_all *all);
 int		esc(t_all *all);
-void	check_exit_for_w(t_all *all);
-void	check_exit_for_a(t_all *all);
-void	check_exit_for_s(t_all *all);
-void	check_exit_for_d(t_all *all);
-
+int		check_exit_w(t_all *all);
+int		check_exit_a(t_all *all);
+int		check_exit_s(t_all *all);
+int		check_exit_d(t_all *all);
+void	count_moves(t_all *all);
 #endif

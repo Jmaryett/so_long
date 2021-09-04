@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   2_check_valid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:50 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/01 14:55:40 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:37:33 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,11 @@ char	**check_valid(char *array)
 	t = NULL;
 	len = array_len(array);
 	t = define_t(array);
-	//init_arr(all, t);
 	if (!fir_las_lin(t))
 		return (0);
 	else if (!fir_las_char(t, len))
 		return (0);
 	else if (!count_items(array))
 		return (0);
-	//free_t(t);
 	return (t);
 }

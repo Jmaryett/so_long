@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   1_parsing.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:21:03 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/01 15:08:03 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:36:15 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	init_height_width(t_all *all)
 		invalid_map();
 	all->map.height = height;
 	all->map.width = len;
-	printf ("all good\n");
 	return (1);
 }
 
@@ -81,7 +80,6 @@ int	check_lines(char *array)
 		}
 		i++;
 	}
-	printf ("all good\n");
 	return (1);
 }
 

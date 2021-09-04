@@ -3,79 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   10_check_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 15:57:36 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/02 15:54:06 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:35:06 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_exit_for_w(t_all *all)
+void	count_moves(t_all *all)
 {
-	if (all->arr[all->plps.y][all->plps.x] == 'E')
-	{
-		if (all->coin_count != 0)
-			return ;
-	}
-	else
-	{
-		all->key.count_moves++;
-		ft_putstr_fd("Current number of moves = ", 1);
-		ft_putnbr_fd(all->key.count_moves, 1);
-		ft_putchar_fd('\n', 1);
-	}
-	return ;
+	all->key.count_moves++;
+	ft_putstr_fd("Current number of moves = ", 1);
+	ft_putnbr_fd(all->key.count_moves, 1);
+	ft_putchar_fd('\n', 1);
 }
 
-void	check_exit_for_a(t_all *all)
+int	check_exit_w(t_all *all)
 {
-	if (all->arr[all->plps.y][all->plps.x] == 'E')
+	if (all->arr[all->plps.y - 1][all->plps.x] == 'E')
 	{
-		if (all->coin_count != 0)
-			return ;
+		if (all->coin_count == 0)
+			exit (0);
+		else
+			return (0);
 	}
-	else
-	{
-		all->key.count_moves++;
-		ft_putstr_fd("Current number of moves = ", 1);
-		ft_putnbr_fd(all->key.count_moves, 1);
-		ft_putchar_fd('\n', 1);
-	}
-	return ;
+	return (1);
 }
 
-void	check_exit_for_s(t_all *all)
+int	check_exit_a(t_all *all)
 {
-	if (all->arr[all->plps.y][all->plps.x] == 'E')
+	if (all->arr[all->plps.y][all->plps.x - 1] == 'E')
 	{
-		if (all->coin_count != 0)
-			return ;
+		if (all->coin_count == 0)
+			exit (0);
+		else
+			return (0);
 	}
-	else
-	{
-		all->key.count_moves++;
-		ft_putstr_fd("Current number of moves = ", 1);
-		ft_putnbr_fd(all->key.count_moves, 1);
-		ft_putchar_fd('\n', 1);
-	}
-	return ;
+	return (1);
 }
 
-void	check_exit_for_d(t_all *all)
+int	check_exit_s(t_all *all)
 {
-	if (all->arr[all->plps.y][all->plps.x] == 'E')
+	if (all->arr[all->plps.y + 1][all->plps.x] == 'E')
 	{
-		if (all->coin_count != 0)
-			return ;
+		if (all->coin_count == 0)
+			exit (0);
+		else
+			return (0);
 	}
-	else
+	return (1);
+}
+
+int	check_exit_d(t_all *all)
+{
+	if (all->arr[all->plps.y][all->plps.x + 1] == 'E')
 	{
-		all->key.count_moves++;
-		ft_putstr_fd("Current number of moves = ", 1);
-		ft_putnbr_fd(all->key.count_moves, 1);
-		ft_putchar_fd('\n', 1);
+		if (all->coin_count == 0)
+			exit (0);
+		else
+			return (0);
 	}
-	return ;
+	return (1);
 }

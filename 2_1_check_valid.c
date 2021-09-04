@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   2_1_check_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:57 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/01 14:54:45 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:36:32 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-/* void	free_t(char **t)
-{
-	int	i;
-
-	i = 0;
-	while (t[i])
-	{
-		free (t[i]);
-		i++;
-	}
-	free(t);
-} */
 
 void	init_arr(t_all *all, char **t)
 {
