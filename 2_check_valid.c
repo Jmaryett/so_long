@@ -6,7 +6,7 @@
 /*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 19:20:50 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/09/04 18:37:33 by jmaryett         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:49:32 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	fir_las_lin(char **t)
 	int	i;
 	int	j;
 
+	if (!t || !*t || !**t)
+		return (0);
 	i = 0;
 	j = -1;
 	while (t[i])
@@ -87,6 +89,8 @@ char	**check_valid(char *array)
 	char	**t;
 	int		len;
 
+	if (!array)
+		return (0);
 	t = NULL;
 	len = array_len(array);
 	t = define_t(array);
